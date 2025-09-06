@@ -1,0 +1,26 @@
+---
+- hosts: web
+  become: true
+  tasks:
+    - name: Ensure base packages
+      apt:
+        name: [vim, htop, git]
+        state: present
+        update_cache: yes
+
+    - name: Ensure Nginx running
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Deploy hardened nginx default
+      copy:
+        src: ../nginx/default.conf
+        dest: /etc/nginx/sites-available/default
+        mode: "0644"
+      notify: [reload nginx]
+
+  handlers:
+    - name: reload nginx
+      service: { name: nginx, state: reloaded }

@@ -1,0 +1,14 @@
+﻿# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*.tfvars
+*.tfvars.json
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp

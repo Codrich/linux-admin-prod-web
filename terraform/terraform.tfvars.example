@@ -1,0 +1,4 @@
+﻿# Copy to terraform.tfvars and fill locally (DO NOT COMMIT real values)
+my_ip_cidr      = "X.X.X.X/32"
+backup_bucket   = "my-linux-backups-YYYYMMDD-yourname"
+public_key_path = "C:/Users/<you>/.ssh/id_rsa.pub"
