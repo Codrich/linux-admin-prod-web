@@ -1,3 +1,6 @@
+> Deployed to: `ssh -i ~/.ssh/id_rsa ubuntu@54.80.9.14`  
+> Cloud backups: `s3://my-linux-backups-20250906-elite/backup/` (30-day retention)
+
 # Linux Admin: Production Web on AWS (Terraform + Ansible)
 
 This project provisions a hardened Ubuntu EC2 instance with Nginx, CloudWatch Agent, and nightly S3 backups.
@@ -57,3 +60,9 @@ terraform destroy
 - Deploy your app (e.g., Node/Flask/Java, or your Expense Tracker) behind Nginx
 - Add systemd units for your app
 - Expand monitoring/alerts, e.g., disk space thresholds, 5xx error rates
+
+## Evidence
+- CPU alarm (OK/ALARM): see `docs/screenshots/cloudwatch-alarm-high-cpu.png`
+- Logs (syslog, nginx): see `docs/screenshots/*.png`
+- S3 backups: see `docs/screenshots/s3-backups-latest-run.png`
+- Terraform outputs: see `docs/screenshots/terraform-outputs.png`
